@@ -1,5 +1,7 @@
 package com.boardcamp.api.models;
 
+import java.time.LocalDate;
+
 import com.boardcamp.api.dtos.RentalDTO;
 
 import jakarta.persistence.Column;
@@ -22,7 +24,7 @@ import lombok.NoArgsConstructor;
 public class RentalModel {
 
     public RentalModel(RentalDTO dto, CustomerModel customer, GameModel game) {
-        this.rentDate = dto.getRentDate();
+        this.rentDate = LocalDate.now();
         this.daysRented = dto.getDaysRented();
         this.returnDate = dto.getReturnDate();
         this.originalPrice = dto.getOriginalPrice();
@@ -36,19 +38,13 @@ public class RentalModel {
     private Long id;
 
     @Column(nullable = false)
-    private Long customerId;
-
-    @Column(nullable = false)
-    private Long gameId;
-
-    @Column(nullable = false)
-    private String rentDate;
+    private LocalDate rentDate;
 
     @Column(nullable = false)
     private Long daysRented;
 
-    @Column(nullable = false)
-    private Long returnDate;
+    @Column(nullable = true)
+    private LocalDate returnDate;
     
     @Column(nullable = false)
     private Long originalPrice;
