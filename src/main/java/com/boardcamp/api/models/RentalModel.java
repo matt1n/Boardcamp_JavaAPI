@@ -53,11 +53,11 @@ public class RentalModel {
     private Long delayFee;
 
     @ManyToOne
-    @JoinColumn(name = "customerId")
+    @JoinColumn(name = "customerId", nullable = false)
     private CustomerModel customer;
 
     @ManyToOne
-    @JoinColumn(name = "gameId")
+    @JoinColumn(name = "gameId", nullable = false)
     private GameModel game;
     
 }
