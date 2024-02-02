@@ -1,6 +1,7 @@
 package com.boardcamp.api.dtos;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 @Data
@@ -12,10 +13,10 @@ public class GameDTO {
     @NotBlank
     private String image;
 
-    @NotBlank
+    @Positive
     private Long stockTotal;
 
-    @NotBlank
+    @Positive
     private Long pricePerDay;
 
 }
