@@ -23,4 +23,9 @@ public class GlobalExceprionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(exception.getMessage());     
     }
 
+    @ExceptionHandler({GameNotFoundException.class})
+    public ResponseEntity<Object> handleGameNotFound(GameNotFoundException exception) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());     
+    }
+
 }

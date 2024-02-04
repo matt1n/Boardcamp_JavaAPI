@@ -26,9 +26,9 @@ public class RentalModel {
     public RentalModel(RentalDTO dto, CustomerModel customer, GameModel game) {
         this.rentDate = LocalDate.now();
         this.daysRented = dto.getDaysRented();
-        this.returnDate = dto.getReturnDate();
-        this.originalPrice = dto.getOriginalPrice();
-        this.delayFee = dto.getDelayFee();
+        this.returnDate = LocalDate.now().plusDays(dto.getDaysRented());
+        this.originalPrice = game.getPricePerDay()*dto.getDaysRented();
+        this.delayFee = Long.valueOf(0);
         this.customer = customer;
         this.game = game;
     }
