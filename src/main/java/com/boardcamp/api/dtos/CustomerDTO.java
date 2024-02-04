@@ -11,6 +11,6 @@ public class CustomerDTO {
     private String name;
 
     @NotBlank
-    @Size(max = 11, message = "CPF tem 11 caracteres")
+    @Size(min = 11, max = 11, message = "CPF tem 11 caracteres")
     private String cpf;
 }
