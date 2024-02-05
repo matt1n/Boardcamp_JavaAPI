@@ -28,4 +28,9 @@ public class GlobalExceprionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());     
     }
 
+    @ExceptionHandler({RentalUnprocessableEntityException.class})
+    public ResponseEntity<Object> handleRentalUnprocessableEntity(RentalUnprocessableEntityException exception) {
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(exception.getMessage());
+    }
+
 }
