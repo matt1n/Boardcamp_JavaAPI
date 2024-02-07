@@ -99,7 +99,7 @@ public class RentalUnitTests {
     }
 
     @Test
-    void givenValidRentalWithoutFee_whenUpdatingRental_thenUpdatesRetntal(){
+    void givenValidRentalWithoutFee_whenUpdatingRental_thenUpdatesRental(){
         RentalDTO dto = new RentalDTO(1L, 1L, 3L);
         CustomerModel customer = new CustomerModel(1L, "aaaaa", "11111111111");
         GameModel game = new GameModel(1L, "Jogo da vida", "aaaa", 3L, 1500L);
