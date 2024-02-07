@@ -33,11 +33,11 @@ public class RentalService {
 
     public RentalModel save(RentalDTO dto){
 
-        if (!customerService.customerRepository.existsById(dto.getCustomerId())) {
+        if (!customerService.existsById(dto.getCustomerId())) {
             throw new CustomerNotFoundException("Usuario não cadastrado");
         }
 
-        if (!gameService.gameRepository.existsById(dto.getGameId())){
+        if (!gameService.existsById(dto.getGameId())){
             throw new GameNotFoundException("Jogo não encontrado");
         }
 

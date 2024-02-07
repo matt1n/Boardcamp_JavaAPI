@@ -19,6 +19,14 @@ public class GameService {
         this.gameRepository = gameRepository;
     }
 
+    public boolean existsById(Long id){
+        boolean gameExists = gameRepository.existsById(id);
+        if (!gameExists) {
+            throw new GameNotFoundException("Jogo não existe");
+        }
+        return gameExists;
+    }
+
     public List<GameModel> findAll(){
         return gameRepository.findAll();
     }

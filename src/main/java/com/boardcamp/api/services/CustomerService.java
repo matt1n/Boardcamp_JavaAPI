@@ -16,6 +16,16 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
+    public boolean existsById(Long id){
+
+        boolean customerExist = customerRepository.existsById(id);
+
+        if (!customerExist){
+            throw new CustomerNotFoundException("Usuário não encontrado!");
+        }
+        return customerExist;
+    }
+
     public CustomerModel findById(Long id){
         return customerRepository.findById(id).orElseThrow(
            () -> new CustomerNotFoundException("Usuário não encontrado!")
